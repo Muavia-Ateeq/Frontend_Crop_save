@@ -1,0 +1,60 @@
+Hey Muavia! 🚀
+
+Great news - I've unified the CropSave backend into ONE service. Everything's merged and ready to deploy.
+
+**Live URL (after your deployment):**
+https://cropsave-backend.onrender.com
+
+**What's working:**
+✅ Drought prediction endpoint
+✅ Cotton yield prediction (waiting on your model file)
+✅ Combined analysis endpoint (both predictions in one call)
+✅ Interactive API docs at /docs
+✅ Full test coverage
+
+**3 Main Endpoints:**
+
+1. POST /drought/predict
+   - Input: location, soil, weather data
+   - Output: drought risk score + recommendations
+
+2. POST /crop/cotton/predict
+   - Input: cotton growth parameters
+   - Output: fiber yield + drought-adjusted prediction
+
+3. POST /combined/analysis
+   - Input: all data combined
+   - Output: complete analysis with both predictions
+
+**ACTION NEEDED FROM YOU:**
+
+1. **Send me the cotton model file**
+   - File: `fiber_yield_app_model.pkl` from your cotton prediction repo
+   - I'll add it to the backend immediately
+
+2. **Update frontend API calls**
+   - Change from 2 separate backends to 1 unified URL
+   - All endpoints documented in MUAVIA_INTEGRATION.md
+
+3. **Test the combined endpoint**
+   - Run: `python test_endpoints.py`
+   - This validates all 3 endpoints work together
+
+**Files I've added for you:**
+- `MUAVIA_INTEGRATION.md` - Complete integration guide
+- `test_endpoints.py` - Test script with sample data
+- `requirements.txt` - All dependencies listed
+
+**Next Steps:**
+1. Send me that model file
+2. Deploy to Render (same process as before)
+3. Update frontend URLs
+4. Test with the script
+
+The combined endpoint is the star feature - frontend can get both drought and cotton predictions in ONE API call instead of two. Much faster for users.
+
+Check the integration doc for code examples and request/response formats.
+
+Let me know once you send the model file and I'll finalize everything!
+
+- Your backend integration partner 🤝

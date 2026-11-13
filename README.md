@@ -1,6 +1,6 @@
 # CropSave
 
-CropSave is a climate-risk and farming-guidance app built around NASA POWER data. Cotton yield prediction tools are also available as a companion feature.
+This repository contains the CropSave frontend, a separate CropSave FastAPI backend, and companion CottonYield tools. CropSave provides climate-risk and farming guidance built around NASA POWER data.
 
 ## Overview
 
@@ -41,6 +41,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ## Project structure
 
 ```text
+backend/                 Separate CropSave FastAPI backend
 src/
   components/             Shared UI components
   context/                Authentication context
@@ -66,4 +67,4 @@ The root `vercel.json` rewrite sends client-side routes back to `index.html`, so
 
 ## Notes
 
-This repo intentionally contains only the frontend app and excludes the backend/mobile project folders.
+The backend and frontend are separate services. Backend setup and run instructions are in `backend/README.md`; frontend setup is documented above.
