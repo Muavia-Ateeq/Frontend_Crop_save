@@ -32,8 +32,8 @@ export default function SplashPage() {
         transition={{ delay: 0.25, duration: 0.5, ease: 'easeOut' }}
         className="text-center"
       >
-        <h1 className="text-3xl font-extrabold text-white tracking-tight">CottonYield AI</h1>
-        <p className="text-white/60 mt-2 text-sm font-medium">Fiber yield prediction</p>
+        <h1 className="text-3xl font-extrabold text-white tracking-tight">CropSave</h1>
+        <p className="text-white/60 mt-2 text-sm font-medium">NASA POWER climate insights for resilient farming</p>
       </motion.div>
 
       <motion.div

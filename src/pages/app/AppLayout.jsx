@@ -59,7 +59,7 @@ export default function AppLayout() {
             <div className="w-7 h-7 rounded-lg gradient-primary flex items-center justify-center">
               <Leaf size={13} className="text-white" />
             </div>
-            <span className="text-sm font-bold text-ink tracking-tight">CottonYield AI</span>
+            <span className="text-sm font-bold text-ink tracking-tight">CropSave</span>
           </div>
         </div>
 

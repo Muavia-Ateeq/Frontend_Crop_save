@@ -4,11 +4,11 @@ import { Leaf, Home, Sparkles, BarChart2, GitBranch, Sprout, User, LogOut } from
 import { useAuth } from '../context/AuthContext';
 
 const NAV = [
-  { to: '/app/home',      icon: Home,      label: 'Home' },
-  { to: '/app/predict',   icon: Sparkles,  label: 'Predict' },
-  { to: '/app/analytics', icon: BarChart2, label: 'Analytics' },
-  { to: '/app/varieties', icon: GitBranch, label: 'Varieties' },
   { to: '/app/crop-save', icon: Sprout, label: 'CropSave' },
+  { to: '/app/home',      icon: Home,      label: 'Cotton Yield' },
+  { to: '/app/predict',   icon: Sparkles,  label: 'Yield Prediction' },
+  { to: '/app/analytics', icon: BarChart2, label: 'Yield Analytics' },
+  { to: '/app/varieties', icon: GitBranch, label: 'Cotton Varieties' },
   { to: '/app/profile',   icon: User,      label: 'Profile' },
 ];
 
@@ -39,8 +39,8 @@ export default function Sidebar({ onClose }) {
           <Leaf size={18} className="text-white" />
         </motion.div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-ink leading-tight tracking-tight">CottonYield AI</p>
-          <p className="text-[11px] text-muted">Fiber yield prediction</p>
+          <p className="text-sm font-bold text-ink leading-tight tracking-tight">CropSave</p>
+          <p className="text-[11px] text-muted">NASA POWER climate insights</p>
         </div>
       </div>
 

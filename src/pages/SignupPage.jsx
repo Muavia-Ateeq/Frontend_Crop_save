@@ -68,7 +68,7 @@ export default function SignupPage() {
             <Leaf size={28} className="text-white" />
           </motion.div>
           <h1 className="text-2xl font-extrabold text-ink tracking-tight">Create account</h1>
-          <p className="text-muted text-sm mt-1.5 font-medium">Join CottonYield AI</p>
+          <p className="text-muted text-sm mt-1.5 font-medium">Create your CropSave account</p>
         </div>
 
         <form onSubmit={signup} className="space-y-4">

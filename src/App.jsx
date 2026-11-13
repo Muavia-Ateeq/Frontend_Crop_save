@@ -36,7 +36,7 @@ export default function App() {
               </ProtectedRoute>
             }
           >
-            <Route index                element={<Navigate to="/app/home" replace />} />
+            <Route index                element={<Navigate to="/app/crop-save" replace />} />
             <Route path="home"          element={<HomePage />} />
             <Route path="predict"       element={<PredictPage />} />
             <Route path="analytics"     element={<AnalyticsPage />} />

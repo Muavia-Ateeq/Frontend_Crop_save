@@ -101,7 +101,7 @@ export default function CropSaveFeature() {
           <p className="crop-save-eyebrow">Climate risk and farm guidance</p>
           <h1>CropSave</h1>
           <p className="crop-save-intro">
-            Check drought risk for a district and get practical guidance alongside your CottonYield tools.
+            Explore district drought risk, rainfall trends, and practical farm guidance. Cotton yield tools are also available in your dashboard.
           </p>
         </div>
       </header>

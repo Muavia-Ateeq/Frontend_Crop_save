@@ -73,7 +73,7 @@ export default function HomePage() {
       {/* Header */}
       <motion.div {...fadeUp(0)} className="flex items-center justify-between">
         <div>
-          <p className="text-[11px] text-muted font-semibold uppercase tracking-widest">Welcome back</p>
+          <p className="text-[11px] text-muted font-semibold uppercase tracking-widest">Cotton yield companion</p>
           <h2 className="text-2xl font-extrabold text-ink mt-0.5 tracking-tight">{displayName}</h2>
         </div>
         <motion.div
@@ -217,7 +217,7 @@ export default function HomePage() {
             <CloudSun size={16} className="text-white" />
           </div>
           <div className="flex-1 min-w-0">
-            <span className="block text-sm font-bold text-ink">Explore CropSave</span>
+            <span className="block text-sm font-bold text-ink">Open CropSave climate dashboard</span>
             <span className="block text-xs text-muted mt-0.5">District drought forecasts and farm guidance</span>
           </div>
           <ChevronRight size={16} className="text-primary group-hover:translate-x-0.5 transition-transform" />

@@ -1,20 +1,12 @@
-# CottonYield AI Frontend
+# CropSave
 
-This repository contains only the frontend web application for the CottonYield AI project.
+CropSave is a climate-risk and farming-guidance app built around NASA POWER data. Cotton yield prediction tools are also available as a companion feature.
 
 ## Overview
 
-CottonYield AI is a cotton fiber yield prediction web app built with React + Vite. It includes:
-- splash screen
-- login/signup flow
-- protected dashboard routes
-- prediction form
-- analytics dashboard
-- variety comparison page
-- user profile page
-- CropSave drought-risk forecasts, rainfall history, and farming advisories
+CropSave provides district-level drought-risk forecasts, rainfall history, and farming advisories. The authenticated dashboard also includes CottonYield prediction, analytics, and variety comparison tools.
 
-CropSave is integrated as a feature in the authenticated dashboard. Shared UI components live in `src/components`, while its page, API client, styles, and feature-specific components live together in `src/features/crop-save`.
+Shared UI components live in `src/components`, while CropSave's page, API client, styles, and feature-specific components live together in `src/features/crop-save`.
 
 ## Stack
 - React 19

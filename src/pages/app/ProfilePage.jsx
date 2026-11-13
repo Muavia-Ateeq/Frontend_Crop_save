@@ -59,7 +59,6 @@ export default function ProfilePage() {
   const { displayName, logout } = useAuth();
   const navigate = useNavigate();
 
-  const username = displayName.toLowerCase().replace(/\s+/g, '');
   const initials = displayName
     .split(' ')
     .map(w => w[0])
@@ -92,7 +91,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <p className="text-lg font-extrabold text-ink tracking-tight">{displayName}</p>
-          <p className="text-xs text-muted mt-1">{username}@cottonyield.app</p>
+          <p className="text-xs text-muted mt-1">CropSave account</p>
           <div className="mt-3 px-3 py-1 bg-primaryLight rounded-full">
             <span className="text-xs font-bold text-primary">Researcher</span>
           </div>
@@ -102,7 +101,7 @@ export default function ProfilePage() {
       {/* Research summary */}
       <motion.div {...fadeUp(0.1)}>
         <Card hover className="p-4">
-          <h3 className="text-sm font-bold text-ink mb-3 tracking-tight">Research summary</h3>
+          <h3 className="text-sm font-bold text-ink mb-3 tracking-tight">Cotton yield research summary</h3>
           {RESEARCH.map(([k, v], i) => (
             <KVRow key={k} k={k} v={v} last={i === RESEARCH.length - 1} />
           ))}
@@ -116,7 +115,7 @@ export default function ProfilePage() {
             <div className="w-6 h-6 rounded-md gradient-primary flex items-center justify-center">
               <span className="text-white text-[10px] font-bold">ML</span>
             </div>
-            <h3 className="text-sm font-bold text-ink tracking-tight">Model details</h3>
+            <h3 className="text-sm font-bold text-ink tracking-tight">Cotton yield model details</h3>
           </div>
           {MODEL.map(([k, v], i) => (
             <KVRow key={k} k={k} v={v} last={i === MODEL.length - 1} />
@@ -167,7 +166,7 @@ export default function ProfilePage() {
         </Card>
       </motion.div>
 
-      <p className="text-center text-xs text-muted pb-2">CottonYield AI · v1.0.0</p>
+      <p className="text-center text-xs text-muted pb-2">CropSave · Cotton yield tools · v1.0.0</p>
       <div className="h-4" />
     </div>
   );

@@ -30,7 +30,7 @@ export default function LoginPage() {
     const { error } = await supabase.auth.signInWithPassword({ email, password: pass });
     setLoading(false);
     if (error) { setErr(error.message); return; }
-    navigate('/app/home', { replace: true });
+    navigate('/app/crop-save', { replace: true });
   };
 
   return (
@@ -59,25 +59,24 @@ export default function LoginPage() {
           <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
             <Leaf size={20} className="text-white" />
           </div>
-          <span className="text-white font-bold text-lg tracking-tight">CottonYield AI</span>
+          <span className="text-white font-bold text-lg tracking-tight">CropSave</span>
         </motion.div>
 
         {/* Hero text */}
         <div className="relative z-10 space-y-6">
           <motion.div {...fadeUp(0.1)}>
             <h1 className="text-5xl font-extrabold text-white leading-[1.1] tracking-[-0.03em]">
-              Predict smarter.<br />
-              <span className="text-white/70">Grow better.</span>
+              See climate risk.<br />
+              <span className="text-white/70">Protect your crops.</span>
             </h1>
           </motion.div>
           <motion.p {...fadeUp(0.2)} className="text-white/70 text-lg leading-relaxed max-w-sm font-medium">
-            AI-powered cotton fiber yield prediction from real field data.
-            Ensemble model with R² = 0.685 across 480 plots.
+            Explore district drought risk, rainfall trends, and practical farm guidance informed by NASA POWER climate data.
           </motion.p>
 
           {/* Stats row */}
           <motion.div {...fadeUp(0.3)} className="flex gap-6">
-            {[['480', 'Field plots'], ['4', 'Locations'], ['0.916', 'Pearson r']].map(([val, lbl]) => (
+            {[['20', 'Mapped districts'], ['12 mo', 'Rainfall history'], ['NASA POWER', 'Climate data']].map(([val, lbl]) => (
               <div key={lbl}>
                 <p className="text-2xl font-bold text-white tabular-nums">{val}</p>
                 <p className="text-white/60 text-xs font-medium mt-0.5">{lbl}</p>
@@ -88,7 +87,7 @@ export default function LoginPage() {
 
         {/* Bottom tag */}
         <motion.p {...fadeUp(0.4)} className="text-white/40 text-xs relative z-10">
-          Final Year Project · Cotton Fiber Yield Prediction
+          NASA POWER Data Challenge · CropSave Project
         </motion.p>
       </div>
 
@@ -105,12 +104,12 @@ export default function LoginPage() {
             <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-4 shadow-warm">
               <Leaf size={28} className="text-white" />
             </div>
-            <h1 className="text-2xl font-extrabold text-ink tracking-tight">CottonYield AI</h1>
+            <h1 className="text-2xl font-extrabold text-ink tracking-tight">CropSave</h1>
           </div>
 
           <div className="mb-8">
-            <h2 className="text-2xl font-extrabold text-ink tracking-tight">Welcome back</h2>
-            <p className="text-muted text-sm mt-1.5 font-medium">Sign in to your researcher account</p>
+            <h2 className="text-2xl font-extrabold text-ink tracking-tight">Welcome back to CropSave</h2>
+            <p className="text-muted text-sm mt-1.5 font-medium">Sign in to explore climate risk and farm guidance</p>
           </div>
 
           {success && (
