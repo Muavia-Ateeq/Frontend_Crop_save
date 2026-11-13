@@ -4,9 +4,8 @@ import {
   Sparkles, Clock, X, Bookmark, RotateCcw,
   Lightbulb, Trash2, CheckCircle,
 } from 'lucide-react';
-import { api } from '../../lib/api';
+import { cottonYieldApi } from '../../lib/cottonYieldApi';
 import { supabase } from '../../lib/supabase';
-import Button from '../../components/Button';
 import Card from '../../components/Card';
 
 const LOCATIONS  = ['Multan', 'Faisalabad', 'Khanpur', 'Rajanpur'];
@@ -128,7 +127,7 @@ export default function PredictPage() {
   const predict = async () => {
     setLoading(true); setError(null); setResult(null); setSaved(false);
     try {
-      const res = await api.post('/predict', {
+      const res = await cottonYieldApi.post('/predict', {
         location:         loc,
         genotype:         vari,
         water_supply_pct: irr.pct,
@@ -138,7 +137,7 @@ export default function PredictPage() {
       setResult(res.data);
     } catch (e) {
       if (e.response?.data?.detail) setError(JSON.stringify(e.response.data.detail));
-      else if (e.code === 'ERR_NETWORK') setError(`Network error: cannot reach the server at ${api.defaults.baseURL}`);
+      else if (e.code === 'ERR_NETWORK') setError(`Network error: cannot reach the server at ${cottonYieldApi.defaults.baseURL}`);
       else setError(e.message || 'Could not reach the server.');
     }
     setLoading(false);

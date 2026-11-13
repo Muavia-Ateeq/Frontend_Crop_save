@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
-import { Leaf, MapPin, GitBranch, Droplets, BarChart2, CheckCircle, Sparkles, CloudUpload, ChevronRight } from 'lucide-react';
+import { Leaf, MapPin, GitBranch, Droplets, BarChart2, CheckCircle, Sparkles, CloudUpload, ChevronRight, CloudSun } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../context/AuthContext';
 import Card from '../../components/Card';
@@ -204,6 +204,22 @@ export default function HomePage() {
             <Sparkles size={15} className="text-white" />
           </div>
           <span className="flex-1 text-sm font-bold text-primary">Go to yield prediction</span>
+          <ChevronRight size={16} className="text-primary group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      </motion.div>
+
+      <motion.div {...fadeUp(0.35)}>
+        <Link
+          to="/app/crop-save"
+          className="group flex items-center gap-3 bg-white border border-line rounded-2xl px-4 py-3.5 hover:border-primary/40 hover:shadow-warm transition-all duration-200"
+        >
+          <div className="w-8 h-8 rounded-lg gradient-teal flex items-center justify-center flex-shrink-0 shadow-warm group-hover:scale-105 transition-transform">
+            <CloudSun size={16} className="text-white" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <span className="block text-sm font-bold text-ink">Explore CropSave</span>
+            <span className="block text-xs text-muted mt-0.5">District drought forecasts and farm guidance</span>
+          </div>
           <ChevronRight size={16} className="text-primary group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </motion.div>

@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Leaf, Home, Sparkles, BarChart2, GitBranch, User, LogOut } from 'lucide-react';
+import { Leaf, Home, Sparkles, BarChart2, GitBranch, Sprout, User, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const NAV = [
@@ -8,6 +8,7 @@ const NAV = [
   { to: '/app/predict',   icon: Sparkles,  label: 'Predict' },
   { to: '/app/analytics', icon: BarChart2, label: 'Analytics' },
   { to: '/app/varieties', icon: GitBranch, label: 'Varieties' },
+  { to: '/app/crop-save', icon: Sprout, label: 'CropSave' },
   { to: '/app/profile',   icon: User,      label: 'Profile' },
 ];
 
@@ -45,7 +46,7 @@ export default function Sidebar({ onClose }) {
 
       {/* Nav */}
       <nav className="flex-1 py-4 px-3 space-y-0.5">
-        {NAV.map(({ to, icon: Icon, label }, idx) => (
+        {NAV.map(({ to, icon: Icon, label }) => (
           <NavLink
             key={to}
             to={to}

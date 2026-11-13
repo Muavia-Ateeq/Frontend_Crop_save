@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -13,6 +14,8 @@ import PredictPage   from './pages/app/PredictPage';
 import AnalyticsPage from './pages/app/AnalyticsPage';
 import VarietiesPage from './pages/app/VarietiesPage';
 import ProfilePage   from './pages/app/ProfilePage';
+
+const CropSaveFeature = lazy(() => import('./features/crop-save/CropSaveFeature'));
 
 export default function App() {
   return (
@@ -39,6 +42,14 @@ export default function App() {
             <Route path="analytics"     element={<AnalyticsPage />} />
             <Route path="varieties"     element={<VarietiesPage />} />
             <Route path="profile"       element={<ProfilePage />} />
+            <Route
+              path="crop-save"
+              element={(
+                <Suspense fallback={<div className="p-6 text-sm text-muted" role="status">Loading CropSave…</div>}>
+                  <CropSaveFeature />
+                </Suspense>
+              )}
+            />
           </Route>
 
           <Route path="*" element={<Navigate to="/splash" replace />} />
