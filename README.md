@@ -1,16 +1,50 @@
-# React + Vite
+# CottonYield AI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains only the frontend web application for the CottonYield AI project.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+CottonYield AI is a cotton fiber yield prediction web app built with React + Vite. It includes:
+- splash screen
+- login/signup flow
+- protected dashboard routes
+- prediction form
+- analytics dashboard
+- variety comparison page
+- user profile page
 
-## React Compiler
+## Stack
+- React 19
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Recharts
+- Supabase for auth and saved predictions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup
 
-## Expanding the ESLint configuration
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment variables
+
+Create a `.env` file using the example file and fill in the required values:
+
+```bash
+VITE_API_URL=http://localhost:8000
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+## Notes
+
+This repo intentionally contains only the frontend app and excludes the backend/mobile project folders.
