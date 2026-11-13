@@ -64,6 +64,14 @@ public/                   Static app-wide assets such as the favicon
 npm run build
 ```
 
+## Deploying to Vercel
+
+Import this repository into Vercel and use the repository root as the project root. Vercel detects Vite; use `npm run build` as the build command and `dist` as the output directory.
+
+Add the production backend and Supabase values from the environment variable section in Vercel project settings before deploying. These `VITE_` variables are included in the client build, so never put server-only secrets or Supabase service-role keys in them. Redeploy after changing a value.
+
+The root `vercel.json` rewrite sends client-side routes back to `index.html`, so refreshing dashboard routes continues to load the React app.
+
 ## Notes
 
 This repo intentionally contains only the frontend app and excludes the backend/mobile project folders.
