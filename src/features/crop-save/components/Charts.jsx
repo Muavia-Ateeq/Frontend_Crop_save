@@ -48,7 +48,7 @@ export default function Charts({ district }) {
     if (targetLat !== undefined && targetLat !== null) params.lat = targetLat;
     if (targetLon !== undefined && targetLon !== null) params.lon = targetLon;
 
-    cropSaveApi.get('/history', { params, signal: controller.signal })
+    cropSaveApi.get('/drought/history', { params, signal: controller.signal })
       .then(({ data }) => {
         if (!Array.isArray(data?.months)) {
           throw new Error('The CropSave API returned an invalid rainfall history.');

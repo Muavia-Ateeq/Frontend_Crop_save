@@ -18,9 +18,9 @@ router = APIRouter()
 limiter = Limiter(key_func=get_remote_address)
 
 # Paths to ML model and scaler
-ROOT = Path(__file__).resolve().parent.parent
-MODEL_PATH = os.getenv("MODEL_PATH", str(ROOT.parent / "ml" / "models" / "random_forest.joblib"))
-SCALER_PATH = os.getenv("SCALER_PATH", str(ROOT.parent / "ml" / "models" / "scaler.pkl"))
+ROOT = Path(__file__).resolve().parents[2]
+MODEL_PATH = Path(os.getenv("MODEL_PATH", str(ROOT / "models" / "random_forest.joblib")))
+SCALER_PATH = Path(os.getenv("SCALER_PATH", str(ROOT / "models" / "scaler.pkl")))
 
 # Load model and scaler once at startup
 try:

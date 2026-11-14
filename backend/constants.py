@@ -10,16 +10,6 @@ RISK_LEVEL_LOW = "LOW"
 RISK_LEVEL_MEDIUM = "MEDIUM"
 RISK_LEVEL_HIGH = "HIGH"
 
-# Drought Impact Percentages (on cotton yield)
-DROUGHT_IMPACT_HIGH = 40  # percent
-DROUGHT_IMPACT_MEDIUM = 20  # percent
-DROUGHT_IMPACT_LOW = 0  # percent
-
-# Cotton Optimal Ranges
-OPTIMAL_WATER_MIN = 75  # percent
-OPTIMAL_NITROGEN_MIN = 240  # kg/ha
-OPTIMAL_NITROGEN_MAX = 280  # kg/ha
-
 # NASA API Configuration
 NASA_API_TIMEOUT = 60  # seconds (reduced from 120)
 NASA_CACHE_SIZE = 256  # LRU cache entries

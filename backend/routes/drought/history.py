@@ -11,7 +11,7 @@ from fastapi import APIRouter, HTTPException, Query
 from services.nasa_api import fetch_daily
 
 router = APIRouter()
-ROOT = Path(__file__).resolve().parent.parent  # backend/
+ROOT = Path(__file__).resolve().parents[2]
 DISTRICTS = {d["name"].lower(): d for d in json.loads((ROOT / "data" / "districts.json").read_text())}
 POWER_LAG_DAYS = 3  # NASA POWER near-real-time data trails today by a few days
 

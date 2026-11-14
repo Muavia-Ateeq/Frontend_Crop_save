@@ -52,7 +52,7 @@ export default function CropSaveFeature() {
     setErrorMessage('');
 
     try {
-      const { data } = await cropSaveApi.post('/predict', {
+      const { data } = await cropSaveApi.post('/drought/predict', {
         lat: district.lat,
         lon: district.lon,
         district_name: district.name,

@@ -15,8 +15,6 @@ from slowapi.errors import RateLimitExceeded
 from logger import logger
 
 from routes.drought import router as drought_router
-from routes.crop import router as crop_router
-from routes.combined import router as combined_router
 from services.ml_service import model_loaded
 
 load_dotenv()
@@ -83,14 +81,10 @@ async def readiness_check():
     """Readiness probe - checks if app can serve traffic."""
     checks = {
         "drought_model_loaded": model_loaded,
-        "cotton_model_loaded": False,  # Will be True when model added
     }
 
-    # Check if critical dependencies are working
-    all_ready = all(checks.values()) or model_loaded  # At least drought works
-
     return {
-        "status": "ready" if all_ready else "not_ready",
+        "status": "ready" if model_loaded else "not_ready",
         "checks": checks,
         "timestamp": datetime.now().isoformat()
     }
@@ -107,10 +101,6 @@ async def liveness_check():
 
 # API v1 routes
 app.include_router(drought_router, prefix="/v1/drought", tags=["Drought Prediction"])
-app.include_router(crop_router, prefix="/v1/crop", tags=["Cotton Yield"])
-app.include_router(combined_router, prefix="/v1/combined", tags=["Combined Analysis"])
 
 # Legacy routes (backward compatibility - temporary)
 app.include_router(drought_router, prefix="/drought", tags=["Drought Prediction (Legacy)"], include_in_schema=False)
-app.include_router(crop_router, prefix="/crop", tags=["Cotton Yield (Legacy)"], include_in_schema=False)
-app.include_router(combined_router, prefix="/combined", tags=["Combined Analysis (Legacy)"], include_in_schema=False)
